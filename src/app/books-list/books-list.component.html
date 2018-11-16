@@ -3,7 +3,7 @@
     <table class="table">
         <caption>List of users</caption>
         <thead>
-          <tr>
+          <tr *ngFor="let book of listOfBooks"> {{book.name}}
             <th scope="col">#</th>
             <th scope="col">Book name</th>
             <th scope="col">Author name </th>
