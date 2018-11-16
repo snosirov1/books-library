@@ -1,9 +1,8 @@
 
   <div class="table-responsive">
     <table class="table">
-        <caption>List of users</caption>
         <thead>
-          <tr *ngFor="let book of listOfBooks"> {{book.name}}
+          <tr>
             <th scope="col">#</th>
             <th scope="col">Book name</th>
             <th scope="col">Author name </th>
@@ -14,43 +13,28 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Count of Monte Cristo</td>
-            <td>Alexander Dumas</td>
-            <td>12345567</td>
-            <td>5</td>
-            <td>1/1/1991</td>
-            <td>Fiction</td>
-          </tr>
-          <tr>
-              <th scope="row">1</th>
-              <td>Count of Monte Cristo</td>
-              <td>Alexander Dumas</td>
-              <td>12345567</td>
-              <td>5</td>
-              <td>1/1/1991</td>
-              <td>Fiction</td>
-          </tr>
-          <tr>
-              <th scope="row">1</th>
-              <td>Count of Monte Cristo</td>
-              <td>Alexander Dumas</td>
-              <td>12345567</td>
-              <td>5</td>
-              <td>1/1/1991</td>
-              <td>Fiction</td>
+          <tr *ngFor="let book of listOfBooks">
+            <th scope="row">{{book.id}}</th>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.ISBNCode}}</td>
+            <td>{{book.issuedAmount}}</td>
+            <td>{{book.publishDate}}</td>
+            <td>{{book.totalAmount}}</td>
           </tr>
         </tbody>
       </table>
-      <div class="btn-group" role="group" aria-label="add edit delete">
-            <button type="button" class="btn btn-secondary">Add</button>
+      <div class="container">
+        <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-secondary">add</button>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-secondary">edit</button>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-secondary">Delete</button>
+              </div>
+            </div>
         </div>
-        <div class="btn-group" role="group" aria-label="add edit delete">
-            <button type="button" class="btn btn-secondary">Edit</button>
-        </div>
-
-        <div class="btn-group" role="group" aria-label="add edit delete">
-            <button type="button" class="btn btn-secondary">Delete</button>
-        </div>
-  </div>
+      </div>
