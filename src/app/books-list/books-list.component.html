@@ -1,0 +1,83 @@
+
+  <div class="table-responsive">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Book name</th>
+            <th scope="col">Author name </th>
+            <th scope="col">ISBN code</th>
+            <th scope="col"># of available books</th>
+            <th scope="col">Publishing date</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of listOfBooks">
+            <th scope="row">{{book.id}}</th>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.ISBNCode}}</td>
+            <td>{{book.issuedAmount}}</td>
+            <td>{{book.publishDate}}</td>
+            <td>{{book.totalAmount}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="container">
+        <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-secondary">add</button>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-secondary">edit</button>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-secondary">Delete</button>
+              </div>
+            </div>
+        </div>
+        <div class="wrapper">
+          <input type="book id">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          </div>
+          <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </div>
+          <div>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </div>
+          <div>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </div>
+          <div>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </div>
+          <div>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </div>
+          <div>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </div>
+        </div>
+        <head>
+          <style>
+            .wrapper {
+              display: grid;
+              grid-template-columns: repeat(4, 4fr);
+              grid-gap: 5em;
+              grid-auto-rows: ;
+
+            }
+            ,.wrapper > div{
+              background: :#eee;
+              padding:1em;
+            }
+            .wrapper > div{
+              background: yellow;
+            }
+          </style>
+        </head>
