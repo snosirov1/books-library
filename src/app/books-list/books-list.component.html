@@ -1,6 +1,8 @@
+<div class="container">
 
+  <!-- Table -->
   <div class="table-responsive">
-    <table class="table">
+    <table class="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -13,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let book of listOfBooks">
+          <tr *ngFor="let book of listOfBooks" (click)="selectABook(book)">
             <th scope="row">{{book.id}}</th>
             <td>{{book.name}}</td>
             <td>{{book.author}}</td>
@@ -23,61 +25,18 @@
             <td>{{book.totalAmount}}</td>
           </tr>
         </tbody>
-      </table>
-      <div class="container">
-        <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-secondary">add</button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-secondary">edit</button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-secondary">Delete</button>
-              </div>
-            </div>
-        </div>
-        <div class="wrapper">
-          <input type="book id">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          </div>
-          <div>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-          </div>
-          <div>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-          </div>
-          <div>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-          </div>
-          <div>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-          </div>
-          <div>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-          </div>
-          <div>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-          </div>
-        </div>
-        <head>
-          <style>
-            .wrapper {
-              display: grid;
-              grid-template-columns: repeat(4, 4fr);
-              grid-gap: 5em;
-              grid-auto-rows: ;
+    </table>
+  </div>
 
-            }
-            ,.wrapper > div{
-              background: :#eee;
-              padding:1em;
-            }
-            .wrapper > div{
-              background: yellow;
-            }
-          </style>
-        </head>
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-success w-100">add</button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary w-100">edit</button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-danger w-100">Delete</button>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-books-list',
   templateUrl: './books-list.component.html',
   styleUrls: ['./books-list.component.scss']
 })
+
 export class BooksListComponent implements OnInit {
-  listOfBooks = [
+  listOfBooks: Array<Book> = [
     {
       id: 1,
       name: 'Count Monte of Cristo',
       author: 'Alexander Dumas',
       ISBNCode: 553213504,
-      totalAmount:2,
+      totalAmount: 2,
       publishDate: 'Tue Oct 13 2018 16:33:03',
       category: 'fiction',
       issuedAmount: 500,
@@ -22,7 +24,7 @@ export class BooksListComponent implements OnInit {
       name: 'The Catcher in the Rye',
       author: 'J. D. Salinger',
       ISBNCode: 7543321726,
-      totalAmount:10,
+      totalAmount: 10,
       publishDate: 'Tue Oct 13 2018 16:33:03',
       category: 'fiction',
       issuedAmount: 200,
@@ -40,8 +42,12 @@ export class BooksListComponent implements OnInit {
   ]
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
+
+  selectABook(book: Book) {
+    this.router.navigate(['book', book.id]);
+  }
 }
 
