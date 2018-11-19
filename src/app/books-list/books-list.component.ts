@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BookListItemsService } from '../book-list-items.service';
 
 @Component({
   selector: 'app-books-list',
@@ -8,46 +9,41 @@ import { Router } from '@angular/router';
 })
 
 export class BooksListComponent implements OnInit {
-  listOfBooks: Array<Book> = [
-    {
-      id: 1,
-      name: 'Count Monte of Cristo',
-      author: 'Alexander Dumas',
-      ISBNCode: 553213504,
-      totalAmount: 2,
-      publishDate: 'Tue Oct 13 2018 16:33:03',
-      category: 'fiction',
-      issuedAmount: 500,
-    },
-    {
-      id: 2,
-      name: 'The Catcher in the Rye',
-      author: 'J. D. Salinger',
-      ISBNCode: 7543321726,
-      totalAmount: 10,
-      publishDate: 'Tue Oct 13 2018 16:33:03',
-      category: 'fiction',
-      issuedAmount: 200,
-    },
-    {
-      id: 3,
-      name: 'Gone With the Wind',
-      author: 'Margaret Mitchell',
-      ISBNCode: 1416548947,
-      totalAmount: 5,
-      publishDate: 'Tue Oct 13 2018 16:33:03',
-      category: 'fiction',
-      issuedAmount: 100,
-    }
-  ]
+  listOfBooks: Array<Book> = [];
+  selectedBook: Book;
+  editMode: boolean;
 
+  constructor(
+    private router: Router,
+    private booksService: BookListItemsService
+  ) { }
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.listOfBooks = this.booksService.getAllBooks();
+  }
 
   selectABook(book: Book) {
-    this.router.navigate(['book', book.id]);
+    this.selectedBook = book;
+    this.editMode = false;
+    this.navigate();
+  }
+
+  turnEditModeOn() {
+    this.editMode = true;
+    this.navigate();
+  }
+
+  addNewBook() {
+    this.router.navigateByUrl('add');
+  }
+
+  private navigate() {
+    const navingRoute = ['book', this.selectedBook.id];
+
+    if (this.editMode) {
+      navingRoute.push('edit');
+    }
+    this.router.navigate(navingRoute);
   }
 }
 
