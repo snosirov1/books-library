@@ -1,68 +1,86 @@
-<div class="container">  
-  <form>
-    <div class="form-row" >
+<div class="container">
+  <form [formGroup]="bookDetailForm">
+    <div class="form-row">
       <div class="col">
         <div class="form-group">
-          <label for="inputID">ID</label>
-          <input type="ID" class="form-control" id="inputID" placeholder="">
+          <label for="bookId">ID</label>
+          <input
+            type="text"
+            class="form-control"
+            id="bookId"
+            placeholder="Book id"
+            formControlName="id"
+          >
         </div>
       </div>
       <div class="col">
         <div class="form-group">
           <label for="inputName">Name</label>
-          <input type="name" class="form-control" id="inputName" placeholder="">
+          <input
+            type="name"
+            class="form-control"
+            id="inputName"
+            placeholder="Book Name"
+            formControlName="name"
+          >
         </div>
       </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="inputAuthor">Author</label> 
-            <input stype="author" class="form-control" id="inputAuthor" placeholder="">
-          </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="bookAuthor">Author</label>
+          <input
+            type="text"
+            class="form-control"
+            id="bookAuthor"
+            placeholder="Book Author"
+          >
         </div>
-    <div class="col">
-    <div class="form-group">
-        <label for="inputISBNCode">ISBN Code</label>
-        <input type="isbn-code" class="form-control" id="inputISBNCode" placeholder="">
-    </div>
-    </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="bookISBNCode">ISBN Code</label>
+          <input
+            type="isbn-code"
+            class="form-control"
+            id="bookISBNCode"
+            placeholder="Book ISBN Code"
+          >
+        </div>
+      </div>
     </div>
     <div class="form-row">
-        <div class="col">
-          <div class="form-group">
-            <label for="inputTotalAmount">Total Amount</label>
-            <input type="total-amount" class="form-control" id="inputTotalAmount" placeholder="">
-           </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="inputTotalAmount">Total Amount</label>
+          <input type="total-amount" class="form-control" id="inputTotalAmount" placeholder="">
         </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="inputPublishDate">Publish Date</label>
-            <input type="publish-date" class="form-control" id="inputPublishDate" placeholder="">
-          </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="inputPublishDate">Publish Date</label>
+          <input type="publish-date" class="form-control" id="inputPublishDate" placeholder="">
         </div>
-      <div class="col"> 
+      </div>
+      <div class="col">
         <div class="form-group">
           <label for="inputCategory">Category</label>
           <input type="category" class="form-control" id="inputCategory" placeholder="">
         </div>
       </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="inoutIssuedAmount">Issued amount</label>
-            <input type="issued-amount" class="form-control" id="inputIssuedAmount" placeholder="">
-          </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="inoutIssuedAmount">Issued amount</label>
+          <input type="issued-amount" class="form-control" id="inputIssuedAmount" placeholder="">
         </div>
       </div>
+    </div>
   </form>
-</div>
-
-  <div class="container">
-    <div class="row  text-center">
-      <div class="col">
-          <button type="button" class="btn btn-success w-50 ">Issue</button>
-      </div>
-      <div class="col">
-          <button type="button" class="btn btn-warning w-50">Return</button>
-      </div>
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-success center-block w-100">Issue</button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-warning center-block w-100">Return</button>
     </div>
   </div>
-
+</div>
